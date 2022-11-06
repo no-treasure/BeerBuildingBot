@@ -1,4 +1,4 @@
-import { config } from "dotenv";
+import { config } from "deno:dotenv";
 import { Bot } from "grammy";
 
 import { AppContext } from "./domain/AppContext.ts";
