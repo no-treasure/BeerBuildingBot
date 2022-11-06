@@ -1,6 +1,6 @@
 import { Composer, session } from "grammy";
 
-import { AppContext } from "../domain/index.ts";
+import { AppContext, Command } from "../domain/index.ts";
 import { initialStorage } from "../utils/index.ts";
 
 import OrderModule from "./order.module.ts";
@@ -12,15 +12,15 @@ const composer = new Composer<AppContext>();
 
 composer.use(session({ initial: initialStorage }));
 
-composer.command("current_state", (ctx) => {
-  ctx.reply(`<pre>${JSON.stringify(ctx.session)}</pre>`, {
-    parse_mode: "HTML",
-  });
-});
-
 composer.use(OrderModule);
 composer.use(TipsModule);
 composer.use(CheckModule);
 composer.use(HelpModule);
+
+composer.command(Command.CURRENT_STATE, (ctx) => {
+  ctx.reply(`<pre>${JSON.stringify(ctx.session)}</pre>`, {
+    parse_mode: "HTML",
+  });
+});
 
 export default composer;

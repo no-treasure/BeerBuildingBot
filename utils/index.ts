@@ -4,5 +4,4 @@ export * from "./constants.ts";
 export * from "./count-check.ts";
 export * from "./count-user-check.ts";
 export * from "./count-final-price.ts";
-export * from "./command.ts";
 export * from "./command-description.ts";

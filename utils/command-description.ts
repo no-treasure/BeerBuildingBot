@@ -1,4 +1,4 @@
-import { Command } from "./command.ts";
+import { Command } from "../domain/index.ts";
 
 export const COMMAND_DESCRIPTION: Record<Command, string> = {
   [Command.ADD]: "Add order to your check",
@@ -8,4 +8,6 @@ export const COMMAND_DESCRIPTION: Record<Command, string> = {
   [Command.TIPS]: "See current tips value",
   [Command.SET_TIPS]: "Set tips value",
   [Command.HELP]: "See command list and description",
+  [Command.HELLO]: "Greetings with bot",
+  [Command.CURRENT_STATE]: "See session storage state(debug)",
 };

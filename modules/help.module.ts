@@ -1,6 +1,6 @@
 import { Composer } from "grammy";
-import { AppContext } from "../domain/index.ts";
-import { Command, COMMAND_DESCRIPTION } from "../utils/index.ts";
+import { AppContext, Command } from "../domain/index.ts";
+import { COMMAND_DESCRIPTION } from "../utils/index.ts";
 
 const composer = new Composer<AppContext>();
 

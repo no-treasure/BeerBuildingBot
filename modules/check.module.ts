@@ -1,7 +1,6 @@
 import { Composer } from "grammy";
-import { AppContext } from "../domain/index.ts";
+import { AppContext, Command } from "../domain/index.ts";
 import {
-  Command,
   countFinalPrice,
   countUserCheck,
   initialStorage,

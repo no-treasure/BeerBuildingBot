@@ -1,6 +1,6 @@
 import { Composer } from "grammy";
-import { AppContext } from "../domain/index.ts";
-import { Command, DEFAULT_ERROR_TEXT } from "../utils/index.ts";
+import { AppContext, Command } from "../domain/index.ts";
+import { DEFAULT_ERROR_TEXT } from "../utils/index.ts";
 
 const composer = new Composer<AppContext>();
 
