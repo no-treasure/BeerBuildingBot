@@ -1,6 +1,5 @@
 import { config } from "dotenv";
-import { Bot, webhookCallback } from "grammy";
-import { Application } from "oak";
+import { Bot } from "grammy";
 
 import { AppContext } from "./domain/AppContext.ts";
 import { Command } from "./domain/command.ts";
@@ -12,12 +11,7 @@ const BOT_TOKEN = Deno.env.get("BOT_TOKEN") || env.BOT_TOKEN;
 
 if (!BOT_TOKEN) throw new Error("Missing BOT_TOKEN");
 
-const app = new Application();
 const bot = new Bot<AppContext>(BOT_TOKEN);
-
-app.use(webhookCallback(bot, "oak"));
-
-await bot.init();
 
 bot.command(Command.HELLO, (ctx) => {
   ctx.reply("Greeting, Beer lovers!");
@@ -32,4 +26,4 @@ bot.catch((err) => {
 
 bot.use(AppModule);
 
-bot.start();
+export default bot;
