@@ -7,9 +7,11 @@ import AppModule from "./modules/index.ts";
 
 const env = await config();
 
-if (env.BOT_TOKEN === undefined) throw new Error("Missing BOT_TOKEN");
+const BOT_TOKEN = Deno.env.get("BOT_TOKEN") || env.BOT_TOKEN;
 
-const bot = new Bot<AppContext>(env.BOT_TOKEN);
+if (!BOT_TOKEN) throw new Error("Missing BOT_TOKEN");
+
+const bot = new Bot<AppContext>(BOT_TOKEN);
 
 await bot.init();
 
