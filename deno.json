@@ -1,7 +1,7 @@
 {
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "tasks": {
-    "start": "deno run -A main.ts",
+    "start": "deno run --allow-net --allow-env --allow-read main.ts",
     "dev": "deno run -A --watch=main.ts main.ts"
   },
   "importMap": "import_map.json"

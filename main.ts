@@ -2,6 +2,7 @@ import { config } from "dotenv";
 import { Bot } from "grammy";
 
 import { AppContext } from "./domain/AppContext.ts";
+import { Command } from "./domain/command.ts";
 import AppModule from "./modules/index.ts";
 
 const env = await config();
@@ -12,7 +13,7 @@ const bot = new Bot<AppContext>(env.BOT_TOKEN);
 
 await bot.init();
 
-bot.command("hello", (ctx) => {
+bot.command(Command.HELLO, (ctx) => {
   ctx.reply("Greeting, Beer lovers!");
 });
 
