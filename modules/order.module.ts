@@ -1,10 +1,10 @@
 import { Composer } from "grammy";
 import { AppContext } from "../domain/index.ts";
-import { DEFAULT_ERROR_TEXT } from "../utils/constants.ts";
+import { Command, DEFAULT_ERROR_TEXT } from "../utils/index.ts";
 
 const composer = new Composer<AppContext>();
 
-composer.command("add").on("message:text", async (ctx) => {
+composer.command(Command.ADD).on("message:text", async (ctx) => {
   const message = ctx.update.message.text.replace("/add", "");
   const userName = ctx.update.message.from.first_name;
   const text = message.match(/([^\s]+)/);

@@ -1,12 +1,12 @@
 import { Composer } from "grammy";
 import { AppContext } from "../domain/index.ts";
-import { DEFAULT_ERROR_TEXT } from "../utils/constants.ts";
+import { Command, DEFAULT_ERROR_TEXT } from "../utils/index.ts";
 
 const composer = new Composer<AppContext>();
 
-composer.command("tips", (ctx) => ctx.reply(String(ctx.session.tips)));
+composer.command(Command.TIPS, (ctx) => ctx.reply(String(ctx.session.tips)));
 
-composer.command("set_tips").on("message:text", (ctx) => {
+composer.command(Command.SET_TIPS).on("message:text", (ctx) => {
   const message = ctx.update.message.text.replace("/set_tips", "");
   const numbers = message.match(/\d+?\d*/);
 

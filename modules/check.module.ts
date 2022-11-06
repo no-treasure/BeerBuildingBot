@@ -1,6 +1,7 @@
 import { Composer } from "grammy";
 import { AppContext } from "../domain/index.ts";
 import {
+  Command,
   countFinalPrice,
   countUserCheck,
   initialStorage,
@@ -8,13 +9,13 @@ import {
 
 const composer = new Composer<AppContext>();
 
-composer.command("reset_check", (ctx) => {
+composer.command(Command.RESET_CHECK, (ctx) => {
   ctx.session = initialStorage();
 
   ctx.reply("Check has been reloaded");
 });
 
-composer.command("my_check").on("message:text", (ctx) => {
+composer.command(Command.MY_CHECK).on("message:text", (ctx) => {
   const userName = ctx.update.message.from.first_name;
 
   const userCheck = ctx.session.order[userName];
@@ -26,7 +27,7 @@ composer.command("my_check").on("message:text", (ctx) => {
   ctx.reply(text, { parse_mode: "HTML" });
 });
 
-composer.command("check", (ctx) => {
+composer.command(Command.CHECK, (ctx) => {
   if (!Object.values(ctx.session.order).length) return ctx.reply("Empty check");
 
   const markdown = Object.entries(ctx.session.order).map(([user, check]) =>

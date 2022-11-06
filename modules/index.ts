@@ -6,6 +6,7 @@ import { initialStorage } from "../utils/index.ts";
 import OrderModule from "./order.module.ts";
 import TipsModule from "./tips.module.ts";
 import CheckModule from "./check.module.ts";
+import HelpModule from "./help.module.ts";
 
 const composer = new Composer<AppContext>();
 
@@ -20,5 +21,6 @@ composer.command("current_state", (ctx) => {
 composer.use(OrderModule);
 composer.use(TipsModule);
 composer.use(CheckModule);
+composer.use(HelpModule);
 
 export default composer;
