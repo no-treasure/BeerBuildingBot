@@ -3,4 +3,8 @@ import { serve } from "deno:http";
 
 import bot from "./bot.ts";
 
-serve(webhookCallback(bot, "std/http"));
+if (Deno.env.get("ENV") === "dev") {
+  bot.start();
+} else {
+  serve(webhookCallback(bot, "std/http"));
+}
