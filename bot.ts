@@ -5,7 +5,7 @@ import { AppContext, SessionStorage } from "./domain/index.ts";
 import AppModule from "./modules/index.ts";
 import { initialStorage } from "./utils/initial-storage.ts";
 
-if (Deno.env.get("ENV") === "dev") {
+if (Deno.env.get("MODE") !== "production") {
   await import("deno:dotenv/load");
 }
 
