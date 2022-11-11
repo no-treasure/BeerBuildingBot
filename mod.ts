@@ -3,8 +3,14 @@ import { serve } from "deno:http";
 
 import bot from "./bot.ts";
 
-if (Deno.env.get("ENV") === "dev") {
+const ENVIRONMENT = Deno.env.get("ENV");
+
+if (ENVIRONMENT === "dev") {
   bot.start();
 } else {
   serve(webhookCallback(bot, "std/http"));
 }
+
+console.info(
+  `Bot started in ${ENVIRONMENT === "dev" ? "development" : "production"} mode`,
+);
