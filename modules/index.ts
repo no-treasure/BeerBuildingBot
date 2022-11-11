@@ -1,4 +1,4 @@
-import { Composer, session } from "grammy";
+import { Composer } from "grammy";
 
 import { AppContext, Command } from "../domain/index.ts";
 
