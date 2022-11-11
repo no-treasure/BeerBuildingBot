@@ -1,11 +1,13 @@
-import "deno:dotenv/load";
-
 import { Bot, session } from "grammy";
 import { freeStorage } from "grammy/storage";
 
 import { AppContext, SessionStorage } from "./domain/index.ts";
 import AppModule from "./modules/index.ts";
 import { initialStorage } from "./utils/initial-storage.ts";
+
+if (Deno.env.get("ENV") === "dev") {
+  await import("deno:dotenv/load");
+}
 
 const BOT_TOKEN = Deno.env.get("BOT_TOKEN");
 
