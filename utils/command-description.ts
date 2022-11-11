@@ -9,5 +9,4 @@ export const COMMAND_DESCRIPTION: Record<Command, string> = {
   [Command.SET_TIPS]: "Set tips value",
   [Command.HELP]: "See command list and description",
   [Command.HELLO]: "Greetings with bot",
-  [Command.CURRENT_STATE]: "See session storage state(debug)",
 };
