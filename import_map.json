@@ -3,6 +3,6 @@
     "deno:http": "https://deno.land/std@0.162.0/http/mod.ts",
     "deno:dotenv/load": "https://deno.land/std@0.162.0/dotenv/load.ts",
     "grammy": "https://deno.land/x/grammy@v1.12.0/mod.ts",
-    "grammy/storage": "https://deno.land/x/grammy_storages@v2.0.1/free/src/mod.ts"
+    "grammy/storage": "https://deno.land/x/grammy_storages@v2.0.1/file/src/mod.ts"
   }
 }
