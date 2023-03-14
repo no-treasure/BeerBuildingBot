@@ -1,5 +1,5 @@
 import { Bot, session } from "grammy";
-import { freeStorage } from "grammy/storage";
+import { FileAdapter } from "grammy/storage";
 
 import { AppContext, SessionStorage } from "./domain/index.ts";
 import AppModule from "./modules/index.ts";
@@ -18,7 +18,7 @@ const bot = new Bot<AppContext>(BOT_TOKEN);
 bot.use(
   session({
     initial: initialStorage,
-    storage: freeStorage<SessionStorage>(bot.token),
+    storage: new FileAdapter({ dirName: "sessions" }),
   }),
 );
 
