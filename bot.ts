@@ -18,7 +18,7 @@ const bot = new Bot<AppContext>(BOT_TOKEN);
 bot.use(
   session({
     initial: initialStorage,
-    storage: new FileAdapter({ dirName: "sessions" }),
+    storage: new FileAdapter<SessionStorage>({ dirName: "sessions" }),
   }),
 );
 
