@@ -1,8 +1,8 @@
 {
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "tasks": {
-    "start": "MODE=production deno run --allow-net --allow-env --allow-read mod.ts",
-    "dev": "deno run -A --watch=main.ts mod.ts"
+    "start": "MODE=production deno run --allow-net --allow-env --allow-read --unstable mod.ts",
+    "dev": "deno run -A --watch=main.ts --unstable mod.ts"
   },
   "importMap": "import_map.json"
 }

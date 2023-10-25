@@ -8,7 +8,7 @@
 ### Commands
 
 - **/add**: Add order to your check
-- **/check**: Finnal check includes all persons
+- **/check**: Final check includes all persons
 - **/my_check**: Check includes only your order
 - **/reset_check**: Reset check to default
 - **/tips**: See current tips value

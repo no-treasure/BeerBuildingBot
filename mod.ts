@@ -1,7 +1,7 @@
 import { webhookCallback } from "grammy";
 import { serve } from "deno:http";
 
-import bot from "./bot.ts";
+import { bot } from "./bot.ts";
 
 const BOT_URL = Deno.env.get("BOT_URL");
 const IS_PROD = Deno.env.get("MODE") === "production";
