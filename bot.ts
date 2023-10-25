@@ -14,7 +14,7 @@ const BOT_TOKEN = Deno.env.get("BOT_TOKEN");
 if (!BOT_TOKEN) throw new Error("Missing BOT_TOKEN env");
 
 const bot = new Bot<AppContext>(BOT_TOKEN);
-const kv = await Deno.openKv("./kv.db");
+const kv = await Deno.openKv();
 
 bot.use(
   session({
