@@ -9,7 +9,7 @@ import {
 const composer = new Composer<AppContext>();
 
 composer.command(Command.RESET_CHECK, (ctx) => {
-  ctx.session = initialStorage();
+  ctx.session = { ...initialStorage(), tips: ctx.session.tips };
 
   ctx.reply("Check has been reloaded");
 });
@@ -31,7 +31,7 @@ composer.command(Command.CHECK, (ctx) => {
 
   const markdown = Object.entries(ctx.session.order).map(([user, check]) =>
     countUserCheck(user, check, ctx.session.tips)
-  ) + `Final price: ${countFinalPrice(ctx.session)}\n`;
+  ).join("") + `Final price: ${countFinalPrice(ctx.session)}\n`;
 
   ctx.reply(markdown, { parse_mode: "HTML" });
 });
