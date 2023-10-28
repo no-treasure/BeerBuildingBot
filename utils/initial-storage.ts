@@ -1,4 +1,4 @@
-import { SessionStorage } from "../domain/SessionStorage.ts";
+import { SessionStorage } from "../domain/index.ts";
 
 export function initialStorage(): SessionStorage {
   return {

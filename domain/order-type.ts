@@ -1,4 +1,4 @@
-import { Check } from "./Check.ts";
+import { Check } from "./check-type.ts";
 
 type UserName = string;
 
