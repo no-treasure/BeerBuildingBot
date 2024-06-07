@@ -1,12 +1,42 @@
+import { BotCommand } from "https://deno.land/x/grammy@v1.12.0/types.deno.ts";
 import { Command } from "../domain/index.ts";
 
-export const COMMAND_DESCRIPTION: Record<Command, string> = {
-  [Command.ADD]: "Add order to your check",
-  [Command.CHECK]: "Finnal check includes all persons",
-  [Command.MY_CHECK]: "Check includes only your order",
-  [Command.RESET_CHECK]: "Reset check to default",
-  [Command.TIPS]: "See current tips value",
-  [Command.SET_TIPS]: "Set tips value",
-  [Command.HELP]: "See command list and description",
-  [Command.HELLO]: "Greetings with bot",
-};
+interface BeerBotCommand extends BotCommand {
+  description: string;
+  command: Command;
+}
+
+export const COMMAND_DESCRIPTION: Array<BeerBotCommand> = [
+  {
+    command: Command.ADD,
+    description: "Add order to your check",
+  },
+  {
+    command: Command.CHECK,
+    description: "Final check includes all persons",
+  },
+  {
+    command: Command.MY_CHECK,
+    description: "Check includes only your order",
+  },
+  {
+    command: Command.RESET_CHECK,
+    description: "Reset check to default",
+  },
+  {
+    command: Command.TIPS,
+    description: "See current tips value",
+  },
+  {
+    command: Command.SET_TIPS,
+    description: "Set tips value",
+  },
+  {
+    command: Command.HELP,
+    description: "See command list and description",
+  },
+  {
+    command: Command.HELLO,
+    description: "Greetings with bot",
+  },
+];
