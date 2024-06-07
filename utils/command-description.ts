@@ -32,10 +32,6 @@ export const COMMAND_DESCRIPTION: Array<BeerBotCommand> = [
     description: "Set tips value",
   },
   {
-    command: Command.HELP,
-    description: "See command list and description",
-  },
-  {
     command: Command.HELLO,
     description: "Greetings with bot",
   },

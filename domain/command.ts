@@ -8,6 +8,5 @@ export enum Command {
   TIPS = "tips",
   SET_TIPS = "set_tips",
 
-  HELP = "help",
   HELLO = "hello",
 }
